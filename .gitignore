@@ -1,0 +1,34 @@
+# Laravel / PHP
+/.phpunit.cache
+/vendor
+/storage/*.key
+/public/build
+/public/hot
+/public/storage
+
+# Node.js
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# Environment
+.env
+.env.backup
+.env.production
+
+# IDE / Editors
+/.fleet
+/.idea
+/.vscode
+.cursor
+
+# OpenServer
+.osp
+
+# Config files
+Homestead.json
+Homestead.yaml
+auth.json
+
+# Project specific
+help.txt
