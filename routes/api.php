@@ -1,19 +1,15 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\OrderController;
+use App\Http\Controllers\Api\InventoryController;
+use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/order', [OrderController::class, 'store']);
+Route::get('/orders/{id}', [OrderController::class, 'show']);
+
+Route::get('/inventory/{sku}/movements', [InventoryController::class, 'movements']);
+
+Route::post('/supplier/reserve', [SupplierController::class, 'reserve']);
+Route::get('/supplier/status/{ref}', [SupplierController::class, 'status']);

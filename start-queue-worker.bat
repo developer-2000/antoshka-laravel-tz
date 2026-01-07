@@ -1,0 +1,6 @@
+@echo off
+echo Starting Laravel Queue Worker...
+echo Using Redis connection...
+php artisan queue:work redis --tries=3 --timeout=90
+pause
+
